@@ -9,7 +9,7 @@
     "storage"
   ],
   "host_permissions": [
-    "http://localwsl.com:8080/api/v1/bookmarks/add"
+    "http://localwsl.com:8080/*"
   ],
   "icons": {
     "16": "16.png",

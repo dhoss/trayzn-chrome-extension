@@ -1,11 +1,13 @@
 chrome.action.onClicked.addListener(async function(tab) {
   let tabInfo = await chrome.tabs.get(tab.id);
-  console.log("Tab info: ", tabInfo);
-  fetch("http://localwsl.com:8080/api/v1/bookmarks/add", {
+  let configuration = await chrome.storage.local.get(['url', 'apiKey', 'apiSecret']);
+  fetch(configuration.url, {
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  'X-API-Key': configuration.apiKey,
+                  'X-API-Secret': configuration.apiSecret
               },
               body: JSON.stringify(
                 {
