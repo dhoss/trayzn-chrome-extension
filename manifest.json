@@ -10,7 +10,11 @@
   "host_permissions": [
     "http://localwsl.com:8080/api/v1/bookmarks/add"
   ],
-
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png"
+  },
   "background": {
     "service_worker": "trayzn.js"
   },
