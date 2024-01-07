@@ -1,7 +1,7 @@
 chrome.action.onClicked.addListener(async function(tab) {
   let tabInfo = await chrome.tabs.get(tab.id);
   let configuration = await chrome.storage.local.get(['url', 'apiKey', 'apiSecret']);
-  fetch(configuration.url, {
+  fetch(configuration.url + "/api/v1/bookmarks/add", {
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
